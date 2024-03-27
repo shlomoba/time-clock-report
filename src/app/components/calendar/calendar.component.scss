@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  flex-direction: column;
+
+  > .header,
+  .footer,
+  .row {
+    display: flex;
+
+    > div {
+      width: 150px;
+      //   flex-grow: 1;
+      border: solid 1px #808080;
+      padding: 5px 10px;
+    }
+  }
+}

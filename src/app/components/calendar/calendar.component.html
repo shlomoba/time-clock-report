@@ -1,0 +1,36 @@
+<div class="header">
+  <div><strong>Date</strong></div>
+  <div><strong>Start</strong></div>
+  <div><strong>End</strong></div>
+  <div><strong>Count</strong></div>
+  <div><strong>Actions</strong></div>
+</div>
+
+@for (day of data; track day.date) {
+<div class="row">
+  <div>{{ day.date }}</div>
+  <div>{{ convertTime(day.start) }}</div>
+  <div>{{ convertTime(day.end) }}</div>
+  <div>{{ day.count }}</div>
+  <div>
+    <app-edit-button
+      [date]="day.date"
+      [month]="month"
+      [year]="year"
+      [start]="day.start"
+      [end]="day.end"
+      (changed)="onChanged()"
+    ></app-edit-button>
+  </div>
+</div>
+}
+
+<div class="footer">
+  <div><strong></strong></div>
+  <div><strong></strong></div>
+  <div><strong></strong></div>
+  <div>
+    <strong>{{ total }}</strong>
+  </div>
+  <div><strong></strong></div>
+</div>

@@ -1,0 +1,23 @@
+<a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menumonth">
+  {{ getSelectedMonth() }}
+  <span nz-icon nzType="down"></span>
+</a>
+<nz-dropdown-menu #menumonth="nzDropdownMenu">
+  <ul nz-menu>
+    @for (month of getMonthArray(); track month.id) {
+    <li nz-menu-item (click)="onSelectMonth(month.id)">{{ month.text }}</li>
+    }
+  </ul>
+</nz-dropdown-menu>
+
+<a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menuyear">
+  {{ selectedYearId }}
+  <span nz-icon nzType="down"></span>
+</a>
+<nz-dropdown-menu #menuyear="nzDropdownMenu">
+  <ul nz-menu>
+    @for (year of years; track year) {
+    <li nz-menu-item (click)="onSelectYear(year)">{{ year }}</li>
+    }
+  </ul>
+</nz-dropdown-menu>

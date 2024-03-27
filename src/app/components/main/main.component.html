@@ -1,0 +1,15 @@
+<div class="header">
+  <app-header
+    [selectedMonthId]="selectedMonthId"
+    [selectedYearId]="selectedYearId"
+    (monthChanged)="onMonthChanged($event)"
+    (yearChanged)="onYearChanged($event)"
+  ></app-header>
+</div>
+
+<div class="main">
+  <app-calendar
+    [month]="selectedMonthId"
+    [year]="selectedYearId"
+  ></app-calendar>
+</div>
